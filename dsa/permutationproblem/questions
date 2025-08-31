@@ -1,3 +1,4 @@
+```mermaid
 graph TD
     A0["permute(ABC, 0)"]
     A1["swap(0,0) -> permute(ABC,1)"]
