@@ -54,22 +54,6 @@ public class Permutation {
 
 ---
 
-### **4. Dry Run for "ABC"**
-
-| Step             | Swap      | Current String      |
-| ---------------- | --------- | ------------------- |
-| Start at index 0 | Swap(0,0) | `ABC`               |
-| index 1          | Swap(1,1) | `ABC` → print `ABC` |
-| Backtrack        | Swap(1,2) | `ACB` → print `ACB` |
-| Backtrack        | Swap(0,1) | `BAC`               |
-| index 1          | Swap(1,1) | `BAC` → print `BAC` |
-| Backtrack        | Swap(1,2) | `BCA` → print `BCA` |
-| Backtrack        | Swap(0,2) | `CBA`               |
-| index 1          | Swap(1,1) | `CBA` → print `CBA` |
-| Backtrack        | Swap(1,2) | `CAB` → print `CAB` |
-
----
-
 ### **5. Complexity**
 
 * **Time Complexity:**
