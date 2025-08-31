@@ -1,19 +1,25 @@
-```mermaid
 graph TD
-    A0["permute(ABC, 0)"]
-    A1["swap(0,0) -> permute(ABC,1)"]
-    A2["swap(1,1) -> permute(ABC,2) -> print(ABC)"]
-    A3["swap(1,2) -> permute(ACB,2) -> print(ACB)"]
-    B1["swap(0,1) -> permute(BAC,1)"]
-    B2["swap(1,1) -> permute(BAC,2) -> print(BAC)"]
-    B3["swap(1,2) -> permute(BCA,2) -> print(BCA)"]
-    C1["swap(0,2) -> permute(CBA,1)"]
-    C2["swap(1,1) -> permute(CBA,2) -> print(CBA)"]
-    C3["swap(1,2) -> permute(CAB,2) -> print(CAB)"]
+    A0["Index=0, Subset=[]"]
+    A1["Include 1 -> [1]"]
+    A2["Include 2 -> [1,2]"]
+    A3["Include 3 -> [1,2,3] -> Add to result"]
+    A4["Exclude 3 -> [1,2] -> Add to result"]
+    A5["Exclude 2 -> [1]"]
+    A6["Include 3 -> [1,3] -> Add to result"]
+    A7["Exclude 3 -> [1] -> Add to result"]
+    B1["Exclude 1 -> []"]
+    B2["Include 2 -> [2]"]
+    B3["Include 3 -> [2,3] -> Add to result"]
+    B4["Exclude 3 -> [2] -> Add to result"]
+    B5["Exclude 2 -> []"]
+    B6["Include 3 -> [3] -> Add to result"]
+    B7["Exclude 3 -> [] -> Add to result"]
 
-    A0 --> A1 --> A2
-    A1 --> A3
-    A0 --> B1 --> B2
-    B1 --> B3
-    A0 --> C1 --> C2
-    C1 --> C3
+    A0 --> A1 --> A2 --> A3
+    A2 --> A4
+    A1 --> A5 --> A6
+    A5 --> A7
+    A0 --> B1 --> B2 --> B3
+    B2 --> B4
+    B1 --> B5 --> B6
+    B5 --> B7
