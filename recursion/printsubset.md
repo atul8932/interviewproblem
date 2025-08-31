@@ -1,0 +1,19 @@
+```mermaid
+graph TD
+    A0["permute(ABC, 0)"]
+    A1["swap(0,0) -> permute(ABC,1)"]
+    A2["swap(1,1) -> permute(ABC,2) -> print(ABC)"]
+    A3["swap(1,2) -> permute(ACB,2) -> print(ACB)"]
+    B1["swap(0,1) -> permute(BAC,1)"]
+    B2["swap(1,1) -> permute(BAC,2) -> print(BAC)"]
+    B3["swap(1,2) -> permute(BCA,2) -> print(BCA)"]
+    C1["swap(0,2) -> permute(CBA,1)"]
+    C2["swap(1,1) -> permute(CBA,2) -> print(CBA)"]
+    C3["swap(1,2) -> permute(CAB,2) -> print(CAB)"]
+
+    A0 --> A1 --> A2
+    A1 --> A3
+    A0 --> B1 --> B2
+    B1 --> B3
+    A0 --> C1 --> C2
+    C1 --> C3
